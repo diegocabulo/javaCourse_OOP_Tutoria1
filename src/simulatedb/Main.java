@@ -50,13 +50,13 @@ public class Main {
                                 System.out.print("Enter a name=> ");
                                 name = scanner.next().trim();
                                 myDummyCacheDB.put(id,name);
-                                System.out.println("Se ha Agregado un nuevo Usuario id= "+ id +" name= "+myDummyCacheDB.get(id));
+                                System.out.println("New user add id= "+ id +" name= "+myDummyCacheDB.get(id));
                             }else {
-                                System.out.println("El Usuario se encuentra en la base de datos con id= "+id +" name= "+ item.get(id));
+                                System.out.println("User with id= "+id +" and name= "+ item.get(id) + " already in DB");
                             }
                         }
                     }else{
-                        System.out.println("El Usuario se encuentra en la base de datos con id= "+id +" name= " + myDummyCacheDB.get(id));
+                        System.out.println("User with the= "+id +" and name= " + myDummyCacheDB.get(id) + "already in DB");
                     }
                     break;
                 case "query":
@@ -68,27 +68,27 @@ public class Main {
                             id = Integer.parseInt(input);
                             break;
                         }catch (Exception e){
-                            System.out.println("Please enter a valid number");
+                            System.out.println("Please enter a valid id");
                         }
                     }
                     if(myDummyCacheDB.get(id) == null){
                         for(HashMap<Integer,String> item:myDummyDB){
                             if(item.get(id) == null){
-                                System.out.println("No se encuentra por favor Agregar");
+                                System.out.println("the user is not in the DB please add");
                                 System.out.print("Enter a name=> ");
                                 name = scanner.next().trim();
                                 myDummyCacheDB.put(id,name);
+                                System.out.println("New user add id= "+ id +" name= "+myDummyCacheDB.get(id));
                             }else {
-                                System.out.println("El Usuario se encuentra en la base de datos con id= "+id +" name= "+ item.get(id));
+                                System.out.println("User with id= "+id +" and name= "+ item.get(id) + " already in DB");
                             }
                         }
                     }else{
-                        System.out.println("El Usuario se encuentra en la base de datos con id= "+id +" name= " + myDummyCacheDB.get(id));
+                        System.out.println("User with the id= "+id +" and name= " + myDummyCacheDB.get(id) + "already in DB");
                     }
                     break;
-                case "queryall":
-
-                default:
+                case "quit":
+                    System.out.println("disconnect from DB");
                     break;
             }
         }

@@ -3,10 +3,10 @@ package simulatedb;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
-import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
+        // initialize the variables and instructions
         System.out.println("DUMMY DATABASES");
         System.out.println("Please enter first id(integer) and then Name(String)\n");
 
@@ -25,10 +25,12 @@ public class Main {
 
         String input = "";
 
+        //get the data with a infinite loop
         while (!input.equals("quit")){
-            System.out.print("Enter an option Quit, Query, Add, QueryAll  => ");
+            System.out.print("Enter an option Quit, Query, Add  => ");
             input = scanner.next().toLowerCase();
             switch (input){
+                // add operation to the database
                 case "add":
                     int id;
                     String name;
@@ -58,6 +60,7 @@ public class Main {
                     }
                     break;
                 case "query":
+                    // query operation
                     while (true){
                         try{
                             System.out.print("Enter an id=> ");
